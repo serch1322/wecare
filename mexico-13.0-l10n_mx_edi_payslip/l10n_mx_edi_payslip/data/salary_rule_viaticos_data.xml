@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Deductions -->
+    <record id="hr_rule_l10n_mx_payroll_deduction_071_v" model="hr.salary.rule">
+        <field name="name">Ajuste en Subsidio para el empleo - efectivamente entregado al trabajador</field>
+        <field name="sequence" eval="1071"/>
+        <field name="code">071</field>
+        <field name="l10n_mx_edi_code">071</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_07"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = 0.01 if employee.l10n_mx_edi_contract_regime_type == '02' else 0 </field>
+    </record>
+    <!-- Other Payments -->
+    <record id="hr_rule_l10n_mx_payroll_other_payment_002_v" model="hr.salary.rule">
+        <field name="name">Subsidio para el empleo - efectivamente entregado al trabajador</field>
+        <field name="code">002</field>
+        <field name="l10n_mx_edi_code">002</field>
+        <field name="sequence">2002</field>
+        <field name="category_id" ref="hr_salary_rule_category_other_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_07"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = 0.01 if employee.l10n_mx_edi_contract_regime_type == '02' else 0
+        </field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_003_v" model="hr.salary.rule">
+        <field name="name">Viáticos - entregados al trabajador</field>
+        <field name="code">003</field>
+        <field name="l10n_mx_edi_code">003</field>
+        <field name="sequence">2003</field>
+        <field name="category_id" ref="hr_salary_rule_category_other_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_07"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = inputs.op_003 and inputs.op_003.amount
+        </field>
+    </record>
+    <record id="hr_payslip_input_type_other_payment_003_v" model="hr.payslip.input.type">
+        <field name="code">op_003</field>
+        <field name="name">Viáticos - entregados al trabajador</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_07')])]"/>
+    </record>
+    <!-- Sueldo Neto -->
+    <record id="hr_rule_net_salary_0_v" model="hr.salary.rule">
+        <field name="name">Net Salary</field>
+        <field name="sequence" eval="1000000"/>
+        <field name="code">NetSalary</field>
+        <field name="category_id" ref="hr_salary_rule_category_netsa_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_07"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = categories.OTHER</field>
+    </record>
+</odoo>

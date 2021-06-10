@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Perceptions -->
+    <record id="hr_rule_l10n_mx_payroll_perception_001_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_001_holidays_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_001_holidays_not_enjoyed_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_003_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_003_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_004_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_005_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_006_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_009_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_010_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_011_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_012_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_013_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_014_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_015_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_019_es_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_019_gs_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_019_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_019_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_019_t_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_020_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_020_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_021_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_021_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_024_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_024_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_026_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_027_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_028_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_029_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_029_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_030_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_031_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_031_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_032_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_033_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_034_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_035_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_036_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_036_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_037_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_038_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_038_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_productivity_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_attendance_bonus_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_punctuality_bonus_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_seventh_day_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_039_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_039_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_044_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_044_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_045_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_045_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_046_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_047_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_047_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_048_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_048_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_049_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_050_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_050_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_051_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_052_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_053_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <!-- Deductions -->
+    <record id="hr_rule_l10n_mx_payroll_deduction_001_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_003_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_004_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_005_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_006_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_006_im_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_006_irt_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_006_lphc_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_007_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_007_b_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_007_c_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_007_d_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_007_e_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_007_f_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_008_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_009_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_010_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_scv010_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_011_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_012_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_013_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_014_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_015_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_016_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_017_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_018_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_019_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_020_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_021_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_022_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_023_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_024_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_025_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_026_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_027_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_028_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_029_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_030_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_031_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_032_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_033_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_034_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_035_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_036_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_037_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_038_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_039_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_040_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_041_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_042_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_043_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_048_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_049_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_050_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_051_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_052_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_053_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_054_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_055_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_056_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_057_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_058_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_059_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_060_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_061_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_062_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_063_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_064_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_065_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_066_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_069_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_070_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_071_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_072_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_073_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_074_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_075_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_076_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_077_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_078_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_079_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_080_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_081_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_082_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_083_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_084_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_085_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_086_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_087_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_088_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_089_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_090_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_091_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_092_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_093_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_094_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_095_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_096_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_097_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_098_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_099_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_100_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_101_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_102_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_103_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_104_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_105_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_106_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_107_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_002_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <!-- Other Payments -->
+    <record id="hr_rule_l10n_mx_payroll_other_payment_001_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_002_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_003_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_004_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_005_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_006_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_007_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_008_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_009_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_999_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <!-- Sueldo Neto -->
+    <record id="hr_rule_net_salary_0_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_02"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_seguridad_social_company_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_infonavit_company_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_retirement_company_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_cesantia_company_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_isn_nomina_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <!-- Finiquito-->
+    <record id="hr_rule_l10n_mx_payroll_perception_022_e_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_022_g_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_1_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_e_2_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_2_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_e_3_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_3_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_025_e_fin_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_025_g_fin_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_finiquito_002_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_044_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_045_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_046_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_047_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_067_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_068_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_002_03_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_net_salary_1_bf" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_02"/>
+    </record>
+    <record id="hr_rule_l10n_mx_isn_finiquito_bf" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cuenta210_01" model="account.account">
+        <field name="code">210.01.01</field>
+        <field name="name">Pasivo de nómina</field>
+        <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+    </record>
+    <record id="cuenta210_02" model="account.account">
+        <field name="code">210.01.02</field>
+        <field name="name">Cuenta por pagar al empleado</field>
+        <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+    </record>
+    <record id="cuenta601_08" model="account.account">
+        <field name="code">601.08.01</field>
+        <field name="name">Gasto de nómina</field>
+        <field name="user_type_id" ref="account.data_account_type_expenses"/>
+    </record>
+</odoo>

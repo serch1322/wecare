@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record model="res.country.state" id="base.state_mx_ags">
+        <field name="l10n_mx_payslip_isn">0.025</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_bc">
+        <field name="l10n_mx_payslip_isn">0.018</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_bcs">
+        <field name="l10n_mx_payslip_isn">0.025</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_camp">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_chih">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_chis">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_coah">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_col">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_df">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_dgo">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_gto">
+        <field name="l10n_mx_payslip_isn">0.023</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_gro">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_hgo">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_jal">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_mex">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_mich">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_mor">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_nay">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_nl">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_oax">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_pue">
+        <field name="l10n_mx_payslip_isn">0.06</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_qro">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_q_roo">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_slp">
+        <field name="l10n_mx_payslip_isn">0.025</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_sin">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_son">
+        <field name="l10n_mx_payslip_isn">0.02</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_tab">
+        <field name="l10n_mx_payslip_isn">0.025</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_tamps">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_tlax">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_ver">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_yuc">
+        <field name="l10n_mx_payslip_isn">0.03</field>
+    </record>
+    <record model="res.country.state" id="base.state_mx_zac">
+        <field name="l10n_mx_payslip_isn">0.025</field>
+    </record>
+</odoo>

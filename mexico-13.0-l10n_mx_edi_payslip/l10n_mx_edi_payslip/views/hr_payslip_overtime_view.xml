@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Overtimes -->
+    <record id="view_l10n_mx_overtime_form" model="ir.ui.view">
+        <field name="name">view.l10n_mx.overtime.form</field>
+        <field name="model">hr.payslip.overtime</field>
+        <field name="arch" type="xml">
+            <form string="Overtimes">
+                <sheet string="Overtimes">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="hours"/>
+                            <field name="is_simple"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_l10n_mx_overtime_tree" model="ir.ui.view">
+        <field name="name">view.l10n_mx.overtime.tree</field>
+        <field name="model">hr.payslip.overtime</field>
+        <field name="arch" type="xml">
+            <tree string="Overtimes" editable="bottom" decoration-muted="payslip_id != False">
+                <field name="payslip_id" invisible="1"/>
+                <field name="week"/>
+                <field name="name" required="True" readonly="True"/>
+                <field name="hours" sum="Total" attrs="{'readonly': [('payslip_id', '!=', False)]}"/>
+                <field name="is_simple" optional="show" attrs="{'readonly': [('payslip_id', '!=', False)]}"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_l10n_mx_overtime_search" model="ir.ui.view">
+        <field name="name">view.l10n_mx.overtime.search</field>
+        <field name="model">hr.payslip.overtime</field>
+        <field name="arch" type="xml">
+            <search string="Overtimes">
+                <field name="employee_id"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_l10n_mx_overtime" model="ir.actions.act_window">
+        <field name="name">Overtime</field>
+        <field name="res_model">hr.payslip.overtime</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="l10n_mx_overtime" name="Overtime" parent="hr.menu_human_resources_configuration" sequence="50"
+        action='action_l10n_mx_overtime'
+    />
+</odoo>

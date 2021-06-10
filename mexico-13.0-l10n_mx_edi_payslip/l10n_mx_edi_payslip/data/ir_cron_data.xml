@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record id="ir_cron_create_mx_allocation" model="ir.cron">
+        <field name="name">Mexico: Create legal allocations</field>
+        <field name="model_id" ref="hr_holidays.model_hr_leave_allocation"/>
+        <field name="state">code</field>
+        <field name="code">
+holiday = env.ref('l10n_mx_edi_payslip.mexican_holiday')
+employees = env['hr.employee'].search([("address_home_id.country_id.l10n_mx_edi_code","=","MEX")])
+contracts = env['hr.contract'].search([
+  ('state', '=', 'open'),
+  ('employee_id', 'in', employees.ids)])
+date_mx = env['l10n_mx_edi.certificate'].sudo().get_mx_current_datetime()
+for contract in contracts.filtered(lambda con: con.date_start.day == date_mx.day and con.date_start.month == date_mx.month and con.date_start.year != date_mx.year):
+  contract.action_update_current_holidays()
+  days = contract.l10n_mx_edi_holidays
+  if not days:
+    continue
+  # Cleaning previous holiday allocations, avoid accumulating allocation days through years
+  model.search([('employee_id', '=', contract.employee_id.id), ('name', '!=', date_mx.year), ('holiday_status_id', '=', holiday.id), ('state', '=', 'validate')]).sudo().action_refuse()
+  # Do not create an allocation, if it is already created.
+  if model.search([('employee_id', '=', contract.employee_id.id), ('name', '=', date_mx.year), ('holiday_status_id', '=', holiday.id)]):
+    continue
+  # Create and confirm the allocation
+  allocation = model.create({
+    'name': date_mx.year,
+    'holiday_status_id': holiday.id,
+    'number_of_days': days,
+    'holiday_type': 'employee',
+    'employee_id': contract.employee_id.id,
+    'state': 'draft',
+  })
+  allocation.sudo().action_confirm()
+  allocation.sudo().action_approve()
+        </field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="ir_cron_update_si_contract" model="ir.cron">
+        <field name="name">Mexico: Actualizar Salario Integrado</field>
+        <field name="model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">
+date_mx = env['l10n_mx_edi.certificate'].get_mx_current_datetime()
+contracts = model.search([('state', '=', 'open')])
+to_update = env[model._name]
+for contract in contracts:
+    if contract.date_start.day == date_mx.day and contract.date_start.month == date_mx.month and contract.date_start.year != date_mx.year:
+        to_update |= contract
+to_update.action_update_current_holidays()
+to_update._compute_integrated_salary()
+        </field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="ir_cron_update_sdiv_contract" model="ir.cron">
+        <field name="name">Mexico: Actualizar Salario Diario Integrado Variable</field>
+        <field name="model_id" ref="hr_contract.model_hr_contract"/>
+        <field name="state">code</field>
+        <field name="code">
+contracts = env['hr.contract'].search([
+    ('state', '=', 'open'),
+])
+contracts.compute_integrated_salary_variable()
+        </field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">2</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="ir_cron_update_alimony" model="ir.cron">
+        <field name="name">Mexico: Actualizar Pensiones Alimenticias</field>
+        <field name="model_id" ref="l10n_mx_edi_payslip.model_hr_employee_alimony"/>
+        <field name="state">code</field>
+        <field name="code">
+model.update_alimony()
+        </field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="active" eval="True"/>
+    </record>
+    <record model="ir.actions.server" id="action_hr_payroll_compute_payroll">
+        <field name="name">Compute Sheet</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            records.compute_sheet()
+        </field>
+    </record>
+    <record model="ir.actions.server" id="action_hr_payroll_update_extras">
+        <field name="name">Update Extras</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+for pay in records:
+    pay.l10n_mx_edi_update_extras()
+        </field>
+    </record>
+</odoo>

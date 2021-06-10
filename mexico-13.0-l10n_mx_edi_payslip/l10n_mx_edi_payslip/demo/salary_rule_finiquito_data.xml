@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_rule_l10n_mx_payroll_perception_022_e" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_022_g" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_1" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_e_2" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_2" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_e_3" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_3" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_025_e_fin" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_025_g_fin" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_finiquito_002" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_044" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_045" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_046" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_047" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_067" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_068" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_002_03" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_net_salary_1" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_02"/>
+    </record>
+    <record id="hr_rule_l10n_mx_isn_finiquito" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_holiday_status_view_form_inherit_l10n_mx_edi" model="ir.ui.view">
+        <field name="name">hr.leave.type.l10n_mx_edi_payslip.form</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='request_unit']" position="after">
+                <field name="l10n_mx_edi_payslip_use_calendar_days"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

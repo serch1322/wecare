@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_account_report_idse" model="ir.actions.client">
+        <field name="name">IDSE (Reingreso)</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.idse.report'}"/>
+    </record>
+    <record id="action_account_report_idse_baja" model="ir.actions.client">
+        <field name="name">IDSE (Baja)</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.idse.baja.report'}"/>
+    </record>
+    <record id="action_account_report_idse_wage" model="ir.actions.client">
+        <field name="name">IDSE (Wage Update)</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.idse.wage.report'}"/>
+    </record>
+    <record id="action_account_report_sua" model="ir.actions.client">
+        <field name="name">SUA (Aseg)</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.sua.report'}"/>
+    </record>
+    <record id="action_account_report_sua_affiliation" model="ir.actions.client">
+        <field name="name">SUA (Afil)</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.sua.affiliation.report'}"/>
+    </record>
+    <record id="action_account_report_sua_baja" model="ir.actions.client">
+        <field name="name">SUA (Mov)</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.sua.mov.report'}"/>
+    </record>
+
+    <menuitem name="IDSE" id="menu_report_idse" parent="hr_payroll.menu_hr_payroll_report" sequence="40"/>
+    <menuitem name="Reingreso" id="menu_report_idse_reingreso" parent="menu_report_idse" sequence="40" action="action_account_report_idse"/>
+    <menuitem name="Baja" id="menu_report_idse_baja" parent="menu_report_idse" sequence="40" action="action_account_report_idse_baja"/>
+    <menuitem name="Wage Update" id="menu_report_idse_wage" parent="menu_report_idse" sequence="40" action="action_account_report_idse_wage"/>
+    <menuitem name="SUA" id="menu_report_sua" parent="hr_payroll.menu_hr_payroll_report" sequence="40"/>
+    <menuitem name="Insured" id="menu_report_sua_reingreso" parent="menu_report_sua" sequence="10" action="action_account_report_sua"/>
+    <menuitem name="Affiliation" id="menu_report_sua_affiliation" parent="menu_report_sua" sequence="20" action="action_account_report_sua_affiliation"/>
+    <menuitem name="Movements" id="menu_report_sua_baja" parent="menu_report_sua" sequence="30" action="action_account_report_sua_baja"/>
+
+    <record id="action_account_report_alimony_week" model="ir.actions.client">
+        <field name="name">Alimony</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'model': 'hr.alimony.report'}"/>
+    </record>
+
+    <menuitem name="Alimony" id="menu_report_alimony" parent="hr_payroll.menu_hr_payroll_report" sequence="40" action="action_account_report_alimony_week"/>
+</odoo>

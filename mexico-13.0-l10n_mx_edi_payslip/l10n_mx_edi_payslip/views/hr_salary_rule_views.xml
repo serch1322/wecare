@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="hr_salary_rule_view_form_inh_l10n_mx">
+        <field name="name">hr.salary.rule.form.inh.l10n_mx</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="l10n_mx_edi_code"/>
+                <field name="l10n_mx_group_entry"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="hr_payroll_structure_type_view_form_inh_l10n_mx">
+        <field name="name">hr.payroll.structure.type.form.inh.l10n_mx</field>
+        <field name="model">hr.payroll.structure.type</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payroll_structure_type_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='wage_type']" position="after">
+                <field name="l10n_mx_edi_type"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

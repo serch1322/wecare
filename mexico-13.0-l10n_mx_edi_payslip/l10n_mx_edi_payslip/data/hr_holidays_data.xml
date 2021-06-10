@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Holiday -->
+    <record id="hr_payroll.work_entry_type_legal_leave" model="hr.work.entry.type">
+        <field name="name" eval="'Vacaciones'"/>
+    </record>
+    <record id="hr_payroll.work_entry_type_sick_leave" model="hr.work.entry.type">
+        <field name="name" eval="'Incapacidad por enfermedad general'"/>
+    </record>
+    <record id="hr_payroll.work_entry_type_unpaid_leave" model="hr.work.entry.type">
+        <field name="name" eval="'Ausentismo'"/>
+    </record>
+    <record id="hr_payroll.work_entry_type_leave" model="hr.work.entry.type">
+        <field name="name" eval="'Permiso'"/>
+    </record>
+    <record id="work_entry_type_sick_leave_paternity" model="hr.work.entry.type">
+        <field name="name">Permiso de paternidad</field>
+        <field name="code">LEAVE130</field>
+        <field name="is_leave">True</field>
+        <field name="color">5</field>
+    </record>
+    <record id="work_entry_type_sick_leave_maternity" model="hr.work.entry.type">
+        <field name="name">Maternidad</field>
+        <field name="code">LEAVE111</field>
+        <field name="is_leave">True</field>
+        <field name="color">5</field>
+    </record>
+    <record id="work_entry_type_sick_leave_riesgo_de_trabajo" model="hr.work.entry.type">
+        <field name="name">Incapacidad por riesgo de trabajo</field>
+        <field name="code">LEAVE112</field>
+        <field name="is_leave">True</field>
+        <field name="color">5</field>
+    </record>
+    <record id="work_entry_type_sick_leave_padres_hijo_cancer" model="hr.work.entry.type">
+        <field name="name">Licencia para Padres con Hijos con Cancer</field>
+        <field name="code">LEAVE113</field>
+        <field name="is_leave">True</field>
+        <field name="color">5</field>
+    </record>
+    <record id="work_entry_type_public_holiday_l10n_mx_payroll" model="hr.work.entry.type">
+        <field name="name">Feriado</field>
+        <field name="code">LEAVE140</field>
+        <field name="is_leave">True</field>
+        <field name="color">5</field>
+        <field name="round_days">FULL</field>
+        <field name="round_days_type">UP</field>
+    </record>
+    <record id="mexican_holiday" model="hr.leave.type">
+        <field name="name" eval="'Vacaciones'"/>
+        <field name="allocation_type">fixed</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="hr_payroll.work_entry_type_legal_leave"/>
+    </record>
+    <record id="mexican_maternity" model="hr.leave.type">
+        <field name="name" eval="'Maternidad'"/>
+        <field name="allocation_type">no</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="l10n_mx_edi_payslip.work_entry_type_sick_leave_maternity"/>
+        <field name="l10n_mx_edi_payslip_use_calendar_days">True</field>
+        <field name="responsible_id" ref="base.user_admin"/>
+    </record>
+    <record id="mexican_riesgo_de_trabajo" model="hr.leave.type">
+        <field name="name" eval="'Incapacidad por riesgo de trabajo'"/>
+        <field name="allocation_type">no</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="l10n_mx_edi_payslip.work_entry_type_sick_leave_riesgo_de_trabajo"/>
+        <field name="l10n_mx_edi_payslip_use_calendar_days">True</field>
+        <field name="responsible_id" ref="base.user_admin"/>
+    </record>
+    <record id="mexican_enfermedad_general" model="hr.leave.type">
+        <field name="name" eval="'Incapacidad por enfermedad general'"/>
+        <field name="allocation_type">no</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="hr_payroll.work_entry_type_sick_leave"/>
+        <field name="l10n_mx_edi_payslip_use_calendar_days">True</field>
+        <field name="responsible_id" ref="base.user_admin"/>
+    </record>
+    <record id="mexican_licencia_padres_hijo_cancer" model="hr.leave.type">
+        <field name="name" eval="'Licencia para Padres con Hijos con Cancer'"/>
+        <field name="allocation_type">no</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="l10n_mx_edi_payslip.work_entry_type_sick_leave_padres_hijo_cancer"/>
+        <field name="l10n_mx_edi_payslip_use_calendar_days">True</field>
+        <field name="responsible_id" ref="base.user_admin"/>
+    </record>
+    <record id="mexican_paternity" model="hr.leave.type">
+        <field name="name" eval="'Permiso por paternidad'"/>
+        <field name="allocation_type">fixed</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="work_entry_type_sick_leave_paternity"/>
+        <field name="responsible_id" ref="base.user_admin"/>
+    </record>
+    <record id="mexican_faltas_injustificadas" model="hr.leave.type">
+        <field name="name" eval="'Falta injustificada'"/>
+        <field name="allocation_type">no</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="hr_payroll.work_entry_type_unpaid_leave"/>
+    </record>
+    <record id="mexican_falta_justificada" model="hr.leave.type">
+        <field name="name" eval="'Falta justificada sin goce de salario'"/>
+        <field name="allocation_type">fixed</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="hr_payroll.work_entry_type_unpaid_leave"/>
+    </record>
+    <record id="mexican_permiso_con_goce" model="hr.leave.type">
+        <field name="name" eval="'Permiso con goce de sueldo'"/>
+        <field name="allocation_type">fixed</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="hr_payroll.work_entry_type_leave"/>
+    </record>
+    <record id="mexican_licencia_sin_goce" model="hr.leave.type">
+        <field name="name" eval="'Licencia sin goce de salario'"/>
+        <field name="allocation_type">fixed</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="hr_payroll.work_entry_type_unpaid_leave"/>
+    </record>
+    <record id="mexican_public_holiday" model="hr.leave.type">
+        <field name="name" eval="'Feriado'"/>
+        <field name="allocation_type">no</field>
+        <field name="color_name">black</field>
+        <field name="validity_start" eval="time.strftime('%Y-01-01')"/>
+        <field name="work_entry_type_id" ref="l10n_mx_edi_payslip.work_entry_type_public_holiday_l10n_mx_payroll"/>
+        <field name="responsible_id" ref="base.user_admin"/>
+    </record>
+</odoo>

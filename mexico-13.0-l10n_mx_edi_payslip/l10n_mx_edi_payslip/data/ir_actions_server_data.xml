@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_payslip_download_uuid_xml_server_action" model="ir.actions.server">
+        <field name="name">Download Payslip UUID XML</field>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="state">code</field>
+        <field name="code">
+# Please install the module l10n_mx_edi_uuid_zip, in order to use this server action
+cfdi_attachs = env['ir.attachment']
+for record in records:
+    cfdi_attach = record.l10n_mx_edi_retrieve_last_attachment()
+    if not cfdi_attach or not cfdi_attach.exists():
+        continue
+    cfdi_attachs |= cfdi_attach
+
+    cfdi_attachs += env['ir.attachment'].search([
+        ('res_model', '=', record._name),
+        ('res_id', '=', record.id),
+        ('mimetype', '=', 'application/pdf')
+    ])
+
+attach_zip = env['ir.attachment.zip'].create({
+    'attachment_ids': [(6, 0, cfdi_attachs.ids)],
+    'zip_name': 'cfdi_uuid_xmls.zip',
+})
+attach_zip._set_zip_file()
+action = attach_zip._get_action_download()
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- State -->
+    <record id="view_country_state_tree_l10n_mx_edi_payslip" model="ir.ui.view">
+        <field name="name">res.country.state.tree.l10n_mx_edi_payslip</field>
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='code']" position="after">
+                <field name="l10n_mx_payslip_isn" widget="percentage"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

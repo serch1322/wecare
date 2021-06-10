@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_rule_l10n_mx_payroll_perception_022_e" model="hr.salary.rule">
+        <field name="name">Prima por antigüedad</field>
+        <field name="sequence" eval="22000"/>
+        <field name="code">PE022</field>
+        <field name="l10n_mx_edi_code">022</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_exempt"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = 0
+seniority = contract.get_seniority(date_to=payslip.date_to).get('years')
+if (payslip.struct_id.type_id == payslip.env.ref('l10n_mx_edi_payslip.payroll_structure_type_finiquito') and seniority >= 15) or (payslip.struct_id.type_id == payslip.env.ref('l10n_mx_edi_payslip.payroll_structure_type_liquidacion')):
+    year = payslip.date_to.year if contract.date_start.replace(year=payslip.date_to.year) &lt; payslip.date_to else payslip.date_to.year -1
+    date_start = contract.date_start if contract.date_start.year == payslip.date_to else contract.date_start.replace(year=year)
+    seniority += round(1 / 365 * (contract.get_seniority(date_start, date_to=payslip.date_to, method='a')['days'] - 1), 2)
+    minimum_wage = employee.l10n_mx_edi_employer_registration_id.minimum_wage or contract.company_id.l10n_mx_edi_minimum_wage
+    sbc = contract.l10n_mx_edi_integrated_salary
+    # The basis for making the calculation can not be less than a minimum wage or more than two.
+    base = minimum_wage if minimum_wage > sbc else (minimum_wage * 2 if sbc > minimum_wage * 2 else sbc)
+    days = 12 * seniority
+    result = base * days
+    if days > 90:
+        result = base * 90</field>
+        <field name="note">Hasta 90 días del Salario Minimo por cada año laborado es la parte exenta. Esta en el Art 109 de la Ley del ISR. </field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_022_g" model="hr.salary.rule">
+        <field name="name">Prima por antigüedad</field>
+        <field name="sequence" eval="22000"/>
+        <field name="code">PG022</field>
+        <field name="l10n_mx_edi_code">022</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = 0
+seniority = contract.get_seniority(date_to=payslip.date_to).get('years')
+if (payslip.struct_id.type_id == payslip.env.ref('l10n_mx_edi_payslip.payroll_structure_type_finiquito') and seniority >= 15) or (payslip.struct_id.type_id == payslip.env.ref('l10n_mx_edi_payslip.payroll_structure_type_liquidacion')):
+    year = payslip.date_to.year if contract.date_start.replace(year=payslip.date_to.year) &lt; payslip.date_to else payslip.date_to.year -1
+    date_start = contract.date_start if contract.date_start.year == payslip.date_to else contract.date_start.replace(year=year)
+    seniority += round(1 / 365 * (contract.get_seniority(date_start, date_to=payslip.date_to, method='a')['days'] - 1), 2)
+    minimum_wage = employee.l10n_mx_edi_employer_registration_id.minimum_wage or contract.company_id.l10n_mx_edi_minimum_wage
+    sbc = contract.l10n_mx_edi_integrated_salary
+    # The basis for making the calculation can not be less than a minimum wage or more than two.
+    base = minimum_wage if minimum_wage > sbc else (minimum_wage * 2 if sbc > minimum_wage * 2 else sbc)
+    days = 12 * seniority
+    result = 0
+    if days > 90:
+        result = base * (days - 90)</field>
+        <field name="note">Sólo 90 SM por cada año trabajado es exento, el excedente es gravado</field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_1" model="hr.salary.rule">
+        <field name="name">Vacaciones (parte proporcional)</field>
+        <field name="sequence" eval="23000"/>
+        <field name="code">PG1023</field>
+        <field name="l10n_mx_edi_code">023</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+daily_wage = contract.wage/30
+days = contract.l10n_mx_edi_holidays
+year = payslip.date_to.year if contract.date_start.replace(year=payslip.date_to.year) &lt; payslip.date_to else payslip.date_to.year -1
+date_start = contract.date_start if contract.date_start.year == payslip.date_to else contract.date_start.replace(year=year)
+seniority = contract.get_seniority(date_start, date_to=payslip.date_to, method='a')['days'] - 1
+result = daily_wage * (days / 365 * seniority)
+result += daily_wage * (inputs.pg1_023 and inputs.pg1_023.amount or 0)
+        </field>
+    </record>
+    <record id="hr_payslip_input_type_perception_023_g_1" model="hr.payslip.input.type">
+        <field name="code">pg1_023</field>
+        <field name="name">Vacaciones (parte proporcional)</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+        <record id="hr_rule_l10n_mx_payroll_perception_001_holidays_f" model="hr.salary.rule">
+        <field name="name">Vacaciones (Pendientes)</field>
+        <field name="sequence" eval="24000"/>
+        <field name="code">PGV001</field>
+        <field name="l10n_mx_edi_code">001</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+daily_wage = contract.wage / 30
+result = daily_wage * (inputs.pgv_001 and inputs.pgv_001.amount)
+        </field>
+    </record>
+    <record id="hr_payslip_input_type_perception_001_holidays_f" model="hr.payslip.input.type">
+        <field name="code">pgv_001</field>
+        <field name="name">Vacaciones (Pendientes)</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_e_2" model="hr.salary.rule">
+        <field name="name">Prima Vacacional (parte proporcional)</field>
+        <field name="sequence" eval="23000"/>
+        <field name="code">PE2023</field>
+        <field name="l10n_mx_edi_code">023</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_exempt"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+holidays_exempt = 15 * contract.company_id.l10n_mx_edi_uma
+holidays_bonus = PG1023 * (contract.l10n_mx_edi_vacation_bonus or 25) / 100
+result = holidays_exempt if holidays_bonus > holidays_exempt else holidays_bonus
+        </field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_2" model="hr.salary.rule">
+        <field name="name">Prima Vacacional (parte proporcional)</field>
+        <field name="sequence" eval="23000"/>
+        <field name="code">PG2023</field>
+        <field name="l10n_mx_edi_code">023</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="condition_select">none</field>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+holidays_exempt = 15 * contract.company_id.l10n_mx_edi_uma
+holidays_bonus = PG1023 * (contract.l10n_mx_edi_vacation_bonus or 25) / 100
+result = holidays_bonus - holidays_exempt if holidays_bonus > holidays_exempt else 0
+        </field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_e_3" model="hr.salary.rule">
+        <field name="name">Aguinaldo (parte proporcional)</field>
+        <field name="sequence" eval="23000"/>
+        <field name="code">PE3023</field>
+        <field name="l10n_mx_edi_code">023</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_exempt"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+daily_wage = contract.wage/30
+days = contract._get_days_in_current_period(payslip.date_to, start_year=True)
+aguinaldo_exempt = 30 * contract.company_id.l10n_mx_edi_uma
+aguinaldo = daily_wage * 15 * days / 365
+aguinaldo = aguinaldo_exempt if aguinaldo > aguinaldo_exempt else aguinaldo
+result = aguinaldo
+        </field>
+    </record>
+    <record id="hr_payslip_input_type_perception_023_e_3" model="hr.payslip.input.type">
+        <field name="code">pe3_023</field>
+        <field name="name">Aguinaldo (parte proporcional)</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_023_g_3" model="hr.salary.rule">
+        <field name="name">Aguinaldo (parte proporcional)</field>
+        <field name="sequence" eval="23000"/>
+        <field name="code">PG3023</field>
+        <field name="l10n_mx_edi_code">023</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+daily_wage = contract.wage/30
+days = contract._get_days_in_current_period(payslip.date_to, start_year=True)
+aguinaldo_exempt = 30 * contract.company_id.l10n_mx_edi_uma
+aguinaldo = daily_wage * 15 / 365 * days
+aguinaldo = aguinaldo - aguinaldo_exempt if aguinaldo > aguinaldo_exempt else 0
+result = aguinaldo
+        </field>
+    </record>
+    <record id="hr_payslip_input_type_perception_023_g_3" model="hr.payslip.input.type">
+        <field name="code">pg3_023</field>
+        <field name="name">Aguinaldo (parte proporcional)</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_025_e_fin" model="hr.salary.rule">
+        <field name="name">Indeminizaciones</field>
+        <field name="sequence" eval="25000"/>
+        <field name="code">PE025</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_exempt"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = inputs.p_025 and inputs.p_025.amount
+exempt = 90 * contract.company_id.l10n_mx_edi_uma
+result = exempt if result &gt; exempt else result
+        </field>
+        <field name="note">Sólo 90 UMAs por año trabajado es exento, el excedente es gravado</field>
+    </record>
+    <record id="hr_payslip_input_type_perception_025_e_fin" model="hr.payslip.input.type">
+        <field name="code">p_025</field>
+        <field name="name">Indeminizaciones</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_025_g_fin" model="hr.salary.rule">
+        <field name="name">Indeminizaciones</field>
+        <field name="sequence" eval="25000"/>
+        <field name="code">PG025</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = inputs.p_025 and inputs.p_025.amount
+exempt = 90 * contract.company_id.l10n_mx_edi_uma
+result = result - exempt if result &gt; exempt else 0
+        </field>
+        <field name="note">Sólo 90 UMAs por año trabajado es exento, el excedente es gravado</field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_038_e_fin" model="hr.salary.rule">
+        <field name="name">Otros ingresos por salarios</field>
+        <field name="sequence" eval="38000"/>
+        <field name="code">PE038</field>
+        <field name="l10n_mx_edi_code">038</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_exempt"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.pe_038 and inputs.pe_038.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_perception_038_e_fin" model="hr.payslip.input.type">
+        <field name="code">pe_038</field>
+        <field name="name">Otros ingresos por salarios</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_038_g_fin" model="hr.salary.rule">
+        <field name="name">Otros ingresos por salarios</field>
+        <field name="sequence" eval="38000"/>
+        <field name="code">PG038</field>
+        <field name="l10n_mx_edi_code">038</field>
+        <field name="category_id" ref="hr_salary_rule_category_perception_mx_taxed"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.pg_038 and inputs.pg_038.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_perception_038_g_fin" model="hr.payslip.input.type">
+        <field name="code">pg_038</field>
+        <field name="name">Otros ingresos por salarios</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_finiquito_002" model="hr.salary.rule">
+        <field name="name">ISR</field>
+        <field name="sequence" eval="41000"/>
+        <field name="code">002</field>
+        <field name="l10n_mx_edi_code">002</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+table = [(0.01, 644.58, 0.00, 0.0192), (644.59, 5470.92, 12.38, 0.0640),
+         (5470.93, 9614.66, 321.26, 0.1088), (9614.67, 11176.62, 772.10, 0.1600),
+         (11176.63, 13381.47, 1022.01, 0.1792), (13381.48, 26988.5, 1417.12, 0.2136),
+         (26988.51, 42537.58, 4323.58, 0.2352), (42537.59, 81211.25, 7980.73, 0.3000),
+         (81211.26, 108281.67, 19582.83, 0.3200), (108281.68, 324845.01, 28245.36, 0.3400),
+         (324845.01, 999999999, 101876.9, 0.3500)]
+income_period = categories.PERGRA
+
+category = employee.env.ref('l10n_mx_edi_payslip.hr_salary_rule_category_perception_mx_taxed')
+payslips = employee.slip_ids.filtered(lambda sl: sl.state == 'done' and sl.id != payslip.id and sl.date_from.month == payslip.date_from.month and sl.date_from.year == payslip.date_from.year)
+lines = payslips.mapped('line_ids')
+income_monthly = income_period + sum(lines.filtered(lambda li: li.category_id.id == category.id).mapped('total'))
+
+result = 0
+for value in table:
+   if income_monthly >=value[0] and value[1] >= income_monthly:
+        extra = income_monthly - value[0]
+        result = (extra * value[3]) + value[2]
+        break
+
+rule = employee.env.ref('l10n_mx_edi_payslip.hr_rule_l10n_mx_payroll_deduction_isr')
+result -= sum(lines.filtered(lambda li: li.salary_rule_id == rule).mapped('total'))
+        </field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_004_internal_discount_f" model="hr.salary.rule">
+        <field name="name">Descuento Interno</field>
+        <field name="sequence" eval="41004"/>
+        <field name="code">DI004</field>
+        <field name="l10n_mx_edi_code">004</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = 0
+for loan in employee.get_current_loans('internal', payslip.date_from, payslip.date_to):
+    payment_daily = (loan.monthly_withhold / 30)
+    if contract.l10n_mx_edi_schedule_pay ==  '01':
+        result += payment_daily
+    elif contract.l10n_mx_edi_schedule_pay ==  '02':
+        result += payment_daily * 7
+    elif contract.l10n_mx_edi_schedule_pay == '03':
+        result += payment_daily * 14
+    elif contract.l10n_mx_edi_schedule_pay == '04':
+        result += payment_daily * 15
+    elif contract.l10n_mx_edi_schedule_pay == '05':
+        result += loan.monthly_withhold
+    elif contract.l10n_mx_edi_schedule_pay == '06':
+        result += loan.monthly_withhold * 2
+    elif contract.l10n_mx_edi_schedule_pay == '10':
+        result += payment_daily * 10
+        </field>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_044" model="hr.salary.rule">
+        <field name="name">Ajuste en Prima por antigüedad Exento</field>
+        <field name="sequence" eval="79000"/>
+        <field name="code">044</field>
+        <field name="l10n_mx_edi_code">044</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.d_044 and inputs.d_044.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_deduction_044" model="hr.payslip.input.type">
+        <field name="code">d_044</field>
+        <field name="name">Ajuste en Prima por antigüedad Exento</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_045" model="hr.salary.rule">
+        <field name="name">Ajuste en Prima por antigüedad Gravado</field>
+        <field name="sequence" eval="79100"/>
+        <field name="code">045</field>
+        <field name="l10n_mx_edi_code">045</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.d_045 and inputs.d_045.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_deduction_045" model="hr.payslip.input.type">
+        <field name="code">d_045</field>
+        <field name="name">Ajuste en Prima por antigüedad Gravado</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_046" model="hr.salary.rule">
+        <field name="name">Ajuste en Pagos por separación Exento</field>
+        <field name="sequence" eval="79200"/>
+        <field name="code">046</field>
+        <field name="l10n_mx_edi_code">046</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.d_046 and inputs.d_046.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_deduction_046" model="hr.payslip.input.type">
+        <field name="code">d_046</field>
+        <field name="name">Ajuste en Pagos por separación Exento</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_047" model="hr.salary.rule">
+        <field name="name">Ajuste en Pagos por separación Gravado</field>
+        <field name="sequence" eval="79300"/>
+        <field name="code">047</field>
+        <field name="l10n_mx_edi_code">047</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.d_047 and inputs.d_047.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_deduction_047" model="hr.payslip.input.type">
+        <field name="code">d_047</field>
+        <field name="name">Ajuste en Pagos por separación Gravado</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_067" model="hr.salary.rule">
+        <field name="name">Ajuste en Pagos por separación Acumulable</field>
+        <field name="sequence" eval="81300"/>
+        <field name="code">067</field>
+        <field name="l10n_mx_edi_code">067</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.d_067 and inputs.d_067.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_deduction_067" model="hr.payslip.input.type">
+        <field name="code">d_067</field>
+        <field name="name">Ajuste en Pagos por separación Acumulable</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_068" model="hr.salary.rule">
+        <field name="name">Ajuste en Pagos por separación No Acumulable</field>
+        <field name="sequence" eval="81400"/>
+        <field name="code">068</field>
+        <field name="l10n_mx_edi_code">068</field>
+        <field name="category_id" ref="hr_salary_rule_category_deduction_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = inputs.d_068 and inputs.d_068.amount</field>
+    </record>
+    <record id="hr_payslip_input_type_deduction_068" model="hr.payslip.input.type">
+        <field name="code">d_068</field>
+        <field name="name">Ajuste en Pagos por separación No Acumulable</field>
+        <field name="struct_ids" eval="[(6, 0, [ref('payroll_structure_data_03')])]"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_002_03" model="hr.salary.rule">
+        <field name="name">Subsidio para el empleo - efectivamente entregado al trabajador</field>
+        <field name="code">OP002</field>
+        <field name="l10n_mx_edi_code">002</field>
+        <field name="sequence">87000</field>
+        <field name="category_id" ref="hr_salary_rule_category_other_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = 0.01 if employee.l10n_mx_edi_contract_regime_type == '02' else 0
+        </field>
+    </record>
+    <record id="hr_rule_net_salary_1" model="hr.salary.rule">
+        <field name="name">Net Salary</field>
+        <field name="sequence" eval="100000"/>
+        <field name="code">Net_Salary</field>
+        <field name="category_id" ref="hr_salary_rule_category_netsa_mx"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">result = categories.PERGRA - categories.DEDUC + categories.PEREXE + categories.OTHER</field>
+    </record>
+    <record id="hr_rule_l10n_mx_isn_finiquito" model="hr.salary.rule">
+        <field name="name">ISN Finiquito</field>
+        <field name="sequence" eval="1000005"/>
+        <field name="code">ISN</field>
+        <field name="category_id" ref="hr_payroll.COMP"/>
+        <field name="struct_id" ref="payroll_structure_data_03"/>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="note">Gravado multiplicado por el porcentaje de ISN del estado de la dirección de trabajo y agregado a Company Contribution</field>
+        <field name="amount_python_compute">
+result= (categories.PERGRA + categories.PEREXE) * employee.address_id.state_id.l10n_mx_payslip_isn
+        </field>
+    </record>
+</odoo>

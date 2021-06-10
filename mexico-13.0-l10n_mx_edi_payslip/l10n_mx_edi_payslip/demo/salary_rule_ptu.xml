@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Perceptions -->
+    <record id="hr_rule_l10n_mx_payroll_perception_003_g_ptu" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_perception_003_e_ptu" model="hr.salary.rule">
+        <field name="account_debit" ref="cuenta601_08"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_isr_ptu" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_other_payment_002_ptu" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <record id="hr_rule_l10n_mx_payroll_deduction_002_ptu" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_01"/>
+    </record>
+    <!-- Sueldo Neto -->
+    <record id="hr_rule_net_salary_0_ptu" model="hr.salary.rule">
+        <field name="account_credit" ref="cuenta210_02"/>
+    </record>
+</odoo>

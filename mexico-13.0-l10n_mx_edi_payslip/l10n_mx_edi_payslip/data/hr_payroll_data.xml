@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="hr_work_entry_type_out_of_contract" model="hr.work.entry.type">
+        <field name="name">Out of Contract</field>
+        <field name="color">0</field>
+        <field name="code">OUT</field>
+        <field name="is_leave" eval="False"/>
+        <field name="round_days">HALF</field>
+        <field name="round_days_type">HALF-UP</field>
+    </record>
+</odoo>

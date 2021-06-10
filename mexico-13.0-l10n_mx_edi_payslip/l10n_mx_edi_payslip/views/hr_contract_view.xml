@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_hr_contract_form_inherit_l10n_mx">
+        <field name="name">view.hr.contract.form.inherit.l10n_mx</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="l10n_mx_edi_contract_type"/>
+                <field name="l10n_mx_edi_schedule_pay"/>
+                <field name="l10n_mx_edi_working_type"/>
+                <field name="l10n_mx_edi_day_off"/>
+            </xpath>
+            <xpath expr="//field[@name='advantages']" position="after">
+                <field name="l10n_mx_edi_salary_type"/>
+                <label for="l10n_mx_edi_holidays" class="oe_inline"/>
+                <div class="o_row">
+                    <field name="l10n_mx_edi_holidays"/>
+                    <button name="action_update_current_holidays"
+                        string="Update"
+                        type="object" class="oe_link oe_inline"
+                        groups="hr_payroll.group_hr_payroll_user"/>
+                </div>
+                <field name="l10n_mx_edi_vacation_bonus"/>
+                <field name="l10n_mx_edi_christmas_bonus"/>
+                <field name="l10n_mx_edi_integrated_salary"/>
+                <label for="l10n_mx_edi_sdi_variable" class="oe_inline"/>
+                <div class="o_row">
+                    <field name="l10n_mx_edi_sdi_variable"/>
+                    <button name="compute_integrated_salary_variable"
+                        string="Update"
+                        type="object" class="oe_link oe_inline"
+                        groups="hr_payroll.group_hr_payroll_user"/>
+                </div>
+                <field name="l10n_mx_edi_sdi_total"/>
+                <field name="l10n_mx_edi_sbc"/>
+                <field name="l10n_mx_edi_food_voucher"/>
+                <field name="l10n_mx_edi_food_voucher_onerous"/>
+                <field name="l10n_mx_edi_punctuality_bonus"/>
+                <field name="l10n_mx_edi_attendance_bonus"/>
+                <field name="l10n_mx_edi_electric_ho"/>
+                <field name="l10n_mx_edi_internet_ho"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="before">
+                <button name="%(action_hr_contract_gross_salary)d"
+                    class="oe_stat_button"
+                    type="action"
+                    string="Get Net Salary"
+                    groups="hr_contract.group_hr_contract_manager"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_mx_edi_job_risk_form_view" model="ir.ui.view">
+        <field name="name">l10n_mx_edi.job.risk.form.view</field>
+        <field name="model">l10n_mx_edi.job.risk</field>
+        <field name="arch" type="xml">
+            <form string="Job Risk">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="percentage"/>
+                        <field name="branch_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="l10n_mx_edi_job_risk_tree" model="ir.ui.view">
+        <field name="name">l10n_mx_edi.job.risk.tree</field>
+        <field name="model">l10n_mx_edi.job.risk</field>
+        <field name="arch" type="xml">
+            <tree string="Job Risk">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="percentage"/>
+                <field name="branch_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_job_risk" model="ir.actions.act_window">
+        <field name="name">Job Risk</field>
+        <field name="res_model">l10n_mx_edi.job.risk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="l10n_mx_job_risk" name="Job Risk" parent="hr.menu_human_resources_configuration"
+        sequence="50" action="action_job_risk"/>
+</odoo>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_l10n_mx_edi_payslip" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.l10n.mx.edi.payslip</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr_payroll.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='hr_payroll']" position="inside">
+                <h2>Mexican Payroll</h2>
+                <div class="row mt16 o_settings_container" name="default_mexican_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box" title="The parameters to configure the Mexican Payroll.">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Global Amounts</span>
+                            <div class="text-muted">
+                                Configure global values.
+                            </div>
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="l10n_mx_edi_minimum_wage" class="col-md-3 o_light_label"/>
+                                    <field name="l10n_mx_edi_minimum_wage" class="oe_inline"/>
+                                </div>
+                                <div class="row">
+                                    <label for="l10n_mx_edi_uma" class="col-md-3 o_light_label"/>
+                                    <field name="l10n_mx_edi_uma" class="oe_inline"/>
+                                </div>
+                                <div class="row">
+                                    <label for="l10n_mx_edi_umi" class="col-md-3 o_light_label"/>
+                                    <field name="l10n_mx_edi_umi" class="oe_inline"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" title="The parameters to configure the Mexican Payroll.">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Global Rules</span>
+                            <div class="text-muted">
+                                Configure data to rules.
+                            </div>
+                            <div class="content-group">
+                                <div class="row">
+                                    <label for="l10n_mx_edi_vacation_bonus" class="col-md-3 o_light_label"/>
+                                    <field name="l10n_mx_edi_vacation_bonus" class="oe_inline"/>
+                                </div>
+                                <div class="row">
+                                    <label for="l10n_mx_edi_percentage_saving_fund" class="col-md-3 o_light_label"/>
+                                    <field name="l10n_mx_edi_percentage_saving_fund" class="oe_inline" widget="percentage"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="l10n_mx_edi_payslip_email_alias"/>
+                            <div class="row">
+                                <div class="text-muted col-lg-8">
+                                    Set a custom email alias for payslip. Your employees will receive their payslip from this alias.
+                                </div>
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="l10n_mx_edi_payslip_email_alias" class="o_light_label"/>
+                                    <span>@</span>
+                                    <field name="alias_domain" class="oe_inline" readonly="1" force_save="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="l10n_mx_edi_dynamic_name"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="l10n_mx_edi_dynamic_name"/>
+                            <div class="text-muted">
+                                Concepts in the CFDI
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="l10n_mx_edi_isr_annual_adjustment"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="l10n_mx_edi_isr_annual_adjustment"/>
+                            <div class="text-muted">
+                                If it is checked, the ISR calculation will not be adjusted in the last payroll of the month, it will be the same according to the corresponding table. You must make an annual ISR adjustment, since at the end of the year there may be differences between the effectively withheld ISR and the actual ISR.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='hr_payroll_accountant']" position="inside">
+                <div class="col-lg-6 col-12 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="l10n_mx_edi_not_global_entry"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="l10n_mx_edi_not_global_entry"/>
+                        <div class="text-muted">
+                            Entries for payslips
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
